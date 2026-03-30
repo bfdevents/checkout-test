@@ -113,7 +113,10 @@ function startGPSCheck() {
     return;
   }
 
-  const name = `${fname} ${lname}`;
+const formattedFname = fname.charAt(0).toUpperCase() + fname.slice(1).toLowerCase();
+const formattedLname = lname.charAt(0).toUpperCase() + lname.slice(1).toLowerCase();
+
+const name = `${formattedFname} ${formattedLname}`;
 
   status.textContent = "Checking location...";
 
