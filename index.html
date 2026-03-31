@@ -180,5 +180,28 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
 function deg2rad(deg) { return deg * (Math.PI/180); }
 </script>
 
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+
+  const fname = params.get("prefill_fname");
+  const lname = params.get("prefill_lname");
+
+  if (fname) {
+    const fnameInput = document.getElementById("fname");
+    if (fnameInput && !fnameInput.value) {
+      fnameInput.value = fname;
+    }
+  }
+
+  if (lname) {
+    const lnameInput = document.getElementById("lname");
+    if (lnameInput && !lnameInput.value) {
+      lnameInput.value = lname;
+    }
+  }
+});
+</script>
+
 </body>
 </html>
